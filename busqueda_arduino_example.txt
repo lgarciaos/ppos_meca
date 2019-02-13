@@ -1,0 +1,66 @@
+  the Technical Specs of your board  at https://www.arduino.cc/en/Main/Products
+  the Technical Specs of your board  at https://www.arduino.cc/en/Main/Products
+ http://www.arduino.cc/en/Tutorial/BlinkWithoutDelay
+ http://www.arduino.cc/en/Tutorial/Button
+ http://www.arduino.cc/en/Tutorial/Debounce
+ http://www.arduino.cc/en/Tutorial/InputPullupSerial
+ http://www.arduino.cc/en/Tutorial/ButtonStateChange
+ http://www.arduino.cc/en/Tutorial/Tone3
+ http://www.arduino.cc/en/Tutorial/Tone
+ http://www.arduino.cc/en/Tutorial/Tone4
+ http://www.arduino.cc/en/Tutorial/Tone2
+ http://www.arduino.cc/en/Tutorial/AnalogInput
+ http://www.arduino.cc/en/Tutorial/Calibration
+ http://www.arduino.cc/en/Tutorial/Fading
+  http://www.arduino.cc/en/Tutorial/Smoothing
+ http://www.arduino.cc/en/Tutorial/Dimmer
+ http://www.arduino.cc/en/Tutorial/Graph
+ http://www.arduino.cc/en/Tutorial/Midi
+ http://www.arduino.cc/en/Tutorial/PhysicalPixel
+ http://www.arduino.cc/en/Tutorial/SerialCallResponseASCII
+ http://www.arduino.cc/en/Tutorial/SerialCallResponse
+ http://www.arduino.cc/en/Tutorial/SerialEvent
+ http://www.arduino.cc/en/Tutorial/VirtualColorMixer
+ http://www.arduino.cc/en/Tutorial/Array
+ http://www.arduino.cc/en/Tutorial/ForLoop
+http://www.arduino.cc/en/Tutorial/IfStatement
+ http://www.arduino.cc/en/Tutorial/SwitchCase2
+ http://www.arduino.cc/en/Tutorial/SwitchCase
+ http://www.arduino.cc/en/Tutorial/WhileLoop
+ http://www.arduino.cc/en/Tutorial/ADXL3xx
+   http://www.arduino.cc/en/Tutorial/Knock
+   http://www.arduino.cc/en/Tutorial/Memsic2125
+   http://www.arduino.cc/en/Tutorial/Ping
+ http://www.arduino.cc/en/Tutorial/BarGraph
+ http://www.arduino.cc/en/Tutorial/RowColumnScanning
+ see also http://www.tigoe.net/pcomp/code/category/arduinowiring/514 for more
+ http://www.arduino.cc/en/Tutorial/StringAdditionOperator
+ http://www.arduino.cc/en/Tutorial/StringAppendOperator
+ http://www.arduino.cc/en/Tutorial/StringCaseChanges
+ http://www.arduino.cc/en/Tutorial/StringCharacters
+ http://www.arduino.cc/en/Tutorial/StringComparisonOperators
+ http://www.arduino.cc/en/Tutorial/StringConstructors
+ http://www.arduino.cc/en/Tutorial/StringIndexOf
+ http://www.arduino.cc/en/Tutorial/StringLengthTrim
+ http://www.arduino.cc/en/Tutorial/StringLengthTrim
+ http://www.arduino.cc/en/Tutorial/StringReplace
+ http://www.arduino.cc/en/Tutorial/StringStartsWithEndsWith
+ http://www.arduino.cc/en/Tutorial/StringSubstring
+ http://www.arduino.cc/starterKit
+ http://www.arduino.cc/starterKit
+ http://www.arduino.cc/starterKit
+ http://www.arduino.cc/starterKit
+ http://www.arduino.cc/starterKit
+ http://www.arduino.cc/starterKit
+ http://www.arduino.cc/starterKit
+ http://www.arduino.cc/starterKit
+ http://www.arduino.cc/starterKit
+ http://www.arduino.cc/starterKit
+ http://www.arduino.cc/starterKit
+ http://www.arduino.cc/playground/Main/CapacitiveSensor
+ http://www.arduino.cc/starterKit
+ http://www.arduino.cc/starterKit
+  logo = loadImage("http://www.arduino.cc/arduino_logo.png");
+ http://www.arduino.cc/starterKit
+// using the following arduino pins:
+  // which for many arduino's is not the SS pin.
