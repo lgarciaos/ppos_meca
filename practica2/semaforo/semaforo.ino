@@ -7,7 +7,6 @@ void setup() {
   TCCR1B= 0; TCCR1A=0;
   TCCR1B |= B00001101; //acordarse
   OCR1A= 0x3D09;
-  TIFR1 |= (1 << OCF1A); 
   TIMSK1 |= (1 << OCIE1A);
   sei();
 }
