@@ -45,8 +45,8 @@ component accel_rw
 		read_signal 	: in 	 std_logic;
 		write_signal 	: in 	 std_logic;
 		CMD_IN 		: in 	 std_logic_vector( 7 downto 0);
-		TX_IN 		: in 	 std_logic_vector(15 downto 0);
-		RX_out 		: out 	 std_logic_vector(15 downto 0);
+		TX_IN 		: in 	 std_logic_vector(7 downto 0); --cambio a 8 bits
+		RX_out 		: out 	 std_logic_vector(7 downto 0); --cambio a 8 bits
 		busy_out 	: out 	 std_logic
 	);
 end component;
@@ -55,8 +55,8 @@ TYPE   machine IS(INIT, IDLE, WR_PARAMS_SEND, WRITING,  RD_PARAMS_SEND, READING)
 SIGNAL state 		: machine;
 
 signal cmd_buffer 	: std_logic_vector( 7 downto 0);
-signal tx_data_buffer 	: std_logic_vector(15 downto 0);
-signal rx_data_buffer 	: std_logic_vector(15 downto 0);
+signal tx_data_buffer 	: std_logic_vector(7 downto 0); --cambio a 8 bits
+signal rx_data_buffer 	: std_logic_vector(7 downto 0); --cambio a 8 bits
 
 signal next_wr_buffer 	: std_logic := '0';
 signal busy_buffer 	: std_logic := '0';
@@ -142,7 +142,7 @@ begin
 					leds_buffer <= x"00";
 					leds_out_buffer <= x"0000";
 					cmd_buffer <= x"00";
-					tx_data_buffer <= x"0000";
+					tx_data_buffer <= x"00"; --cambio a 8 bits
 					write_accel_n <= '1';
 					read_accel_n <= '1';
 					init_done <= '0';
@@ -157,8 +157,8 @@ begin
 					
 						if ( delay(15) = '1' ) then
 							next_wr_buffer <= '0';
-							tx_data_buffer <= x"0000";
-							delay <= x"0000";
+							tx_data_buffer <= x"00"; --cambio a 8 bits
+ 							delay <= x"0000";
 							state <= RD_PARAMS_SEND;
 						else 
 							delay <= delay + 1;
@@ -168,7 +168,7 @@ begin
 				WHEN WR_PARAMS_SEND =>
 					next_wr_buffer <= '0';
 					cmd_buffer <= cmd_init_buffer;
-					tx_data_buffer <= val_init_reg;
+					tx_data_buffer <= val_init_reg (15 downto 8); --se cambia a MSB (la parte que debe contener lo que se envia)
 					write_accel_n <= '0';
 					read_accel_n <= '1';
 
@@ -203,7 +203,7 @@ begin
 					read_accel_n <= '1';
 					
 					if (spi_busy = '0') then
-						leds_out_buffer <= rx_data_buffer;
+						--leds_out_buffer <= rx_data_buffer;
 						leds_buffer <= rx_data_buffer(7 downto 0);
 						state <= IDLE;
 					end if;

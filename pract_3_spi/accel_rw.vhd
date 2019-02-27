@@ -15,8 +15,8 @@ entity accel_rw is
 		read_signal : in std_logic;
 		write_signal : in std_logic;
 		CMD_IN : in std_logic_vector(7 downto 0);
-		TX_IN : in std_logic_vector(15 downto 0);
-		RX_out : out std_logic_vector(15 downto 0);
+		TX_IN : in std_logic_vector(7 downto 0); --porque son de 16 bits!?!?! absurdo
+		RX_out : out std_logic_vector(7 downto 0); -- lo mismo, corrigdo a 8 bits por la datasheet del ADXL
 		busy_out : out std_logic
 	);
 end accel_rw ;
@@ -63,8 +63,8 @@ TYPE   machine IS(INIT, IDLE, WR_ST, RD_ST, RX, TX);
 signal state 			: machine;
 signal rw_buffer	 	: std_logic;
 signal cmd_buffer 		: std_logic_vector(7 downto 0);
-signal tx_data_buffer 	: std_logic_vector(15 downto 0);
-signal rx_data_buffer 	: std_logic_vector(15 downto 0);
+signal tx_data_buffer 	: std_logic_vector(7 downto 0);
+signal rx_data_buffer 	: std_logic_vector(7 downto 0);
 signal busy 			: std_logic;
 signal enable 			: std_logic;
 signal cont 			: integer := 0;
@@ -82,7 +82,7 @@ begin
 	GENERIC map(
     slaves    => 1,  --number of spi slaves
     cmd_width => 8,  --command bus width
-    d_width   => 16
+    d_width   => 8  --no tiene por que ser de 16, esos olo hace que compile todo, pero no funciona
 	 )
 	port map 
 	(
@@ -91,7 +91,7 @@ begin
 		enable  => enable ,                          --initiate transaction
 		cpol    => '1',                                 --spi clock polarity
 		cpha    => '1',                                 --spi clock phase
-		clk_div => 250,                                 --system clock cycles per 1/2 period of sclk
+		clk_div => 125,                                 --system clock cycles per 1/2 period of sclk
 		addr    => 229,                                 --address of slave
 		rw      => rw_buffer	,                    --'0' for read, '1' for write
 		tx_cmd  => cmd_to_spi, 			     --command to transmit
@@ -116,7 +116,7 @@ begin
 
         	WHEN INIT =>
 				rw_buffer <= '0';
-				tx_data_buffer <= x"0000";
+				tx_data_buffer <= x"00"; --cambio a 8 bits
 				enable <= '0';
 				busy_out <= '0';
 				state <= IDLE;
