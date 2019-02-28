@@ -15,7 +15,7 @@ entity accel_rw is
 		read_signal : in std_logic;
 		write_signal : in std_logic;
 		CMD_IN : in std_logic_vector(7 downto 0);
-		TX_IN : in std_logic_vector(7 downto 0); --porque son de 16 bits!?!?! absurdo
+		TX_IN : in std_logic_vector(7 downto 0); --porque son de 16 bits!?!?!
 		RX_out : out std_logic_vector(7 downto 0); -- lo mismo, corrigdo a 8 bits por la datasheet del ADXL
 		busy_out : out std_logic
 	);
@@ -91,8 +91,8 @@ begin
 		enable  => enable ,                          --initiate transaction
 		cpol    => '1',                                 --spi clock polarity
 		cpha    => '1',                                 --spi clock phase
-		clk_div => 125,                                 --system clock cycles per 1/2 period of sclk
-		addr    => 229,                                 --address of slave
+		clk_div => 5,                                 --system clock cycles per 1/2 period of sclk
+		addr    => 0,                                 --address of slave
 		rw      => rw_buffer	,                    --'0' for read, '1' for write
 		tx_cmd  => cmd_to_spi, 			     --command to transmit
 		tx_data => TX_IN,			     --data to transmit
