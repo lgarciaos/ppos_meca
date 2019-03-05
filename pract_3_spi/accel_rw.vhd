@@ -91,7 +91,7 @@ begin
 		enable  => enable ,                          --initiate transaction
 		cpol    => '1',                                 --spi clock polarity
 		cpha    => '1',                                 --spi clock phase
-		clk_div => 5,                                 --system clock cycles per 1/2 period of sclk
+		clk_div => 25,                                 --system clock cycles per 1/2 period of sclk
 		addr    => 0,                                 --address of slave
 		rw      => rw_buffer	,                    --'0' for read, '1' for write
 		tx_cmd  => cmd_to_spi, 			     --command to transmit

@@ -14,7 +14,6 @@ entity pract_3_spi is
 		G_SENSOR_INT  	: in 	 std_logic;
 		btn_1 		: in 	 std_logic;
 		LEDS  		: out    std_logic_vector( 7 downto 0);
-		LEDS_OUT 	: out    std_logic_vector(15 downto 0);
 		dip_sw 	 	: in     std_logic_vector( 3 downto 0)
 	);
 end pract_3_spi;
@@ -63,13 +62,12 @@ signal busy_buffer 	: std_logic := '0';
 signal read_accel_n	: std_logic := '1';
 signal write_accel_n 	: std_logic := '1';
 signal init_done 	: std_logic := '0';
-signal val_init_reg 	: std_logic_vector(15 downto 0) := x"0000";
+signal val_init_reg 	: std_logic_vector(7 downto 0) := x"00";
 
 signal cmd_init_buffer 	: std_logic_vector(7 downto 0);
 signal spi_busy 	: std_logic := '0';
 
 signal leds_buffer 	: std_logic_vector( 7 downto 0) := x"00";
-signal leds_out_buffer 	: std_logic_vector(15 downto 0) := x"0000";
 signal reg_to_check 	: std_logic_vector( 7 downto 0) := x"00";
 
 signal delay	 	: std_logic_vector(15 downto 0) := x"0000";
@@ -77,7 +75,6 @@ signal delay	 	: std_logic_vector(15 downto 0) := x"0000";
 begin
 
 	LEDS <= leds_buffer;
-	LEDS_OUT <= leds_out_buffer;
 
 	init_accel_inst1 : init_accel
 	port map
@@ -87,7 +84,7 @@ begin
 		next_wr 	=> next_wr_buffer,
 		regs_to_wr	=> busy_buffer,
 		cmd_to_reg	=> cmd_init_buffer,
-		val_to_reg	=> val_init_reg(15 downto 8)
+		val_to_reg	=> val_init_reg
 	);
 	
 	accel_rw_inst1 :accel_rw 
@@ -132,7 +129,6 @@ begin
 		
 		IF(reset_n = '0') THEN        --reset system
 			leds_buffer <= x"00";
-			leds_out_buffer <= x"0000";
 			state <= INIT;
 	
 		ELSIF(CLK'EVENT AND CLK = '0') THEN
@@ -140,7 +136,6 @@ begin
 
 				WHEN INIT =>
 					leds_buffer <= x"00";
-					leds_out_buffer <= x"0000";
 					cmd_buffer <= x"00";
 					tx_data_buffer <= x"00"; --cambio a 8 bits
 					write_accel_n <= '1';
@@ -168,7 +163,7 @@ begin
 				WHEN WR_PARAMS_SEND =>
 					next_wr_buffer <= '0';
 					cmd_buffer <= cmd_init_buffer;
-					tx_data_buffer <= val_init_reg (15 downto 8); --se cambia a MSB (la parte que debe contener lo que se envia)
+					tx_data_buffer <= val_init_reg; --se cambia a MSB (la parte que debe contener lo que se envia)
 					write_accel_n <= '0';
 					read_accel_n <= '1';
 
@@ -203,8 +198,7 @@ begin
 					read_accel_n <= '1';
 					
 					if (spi_busy = '0') then
-						--leds_out_buffer <= rx_data_buffer;
-						leds_buffer <= rx_data_buffer(7 downto 0);
+						leds_buffer <= rx_data_buffer;
 						state <= IDLE;
 					end if;
 				
