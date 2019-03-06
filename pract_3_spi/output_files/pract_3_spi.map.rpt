@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pract_3_spi
-Wed Mar  6 13:40:17 2019
+Wed Mar  6 14:24:33 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -13,19 +13,20 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |pract_3_spi|state
-  9. State Machine - |pract_3_spi|accel_rw:accel_rw_inst1|state
- 10. State Machine - |pract_3_spi|init_accel:init_accel_inst1|state
+  8. State Machine - |p3_accel_motor|pract_3_spi:inst1|state
+  9. State Machine - |p3_accel_motor|pract_3_spi:inst1|accel_rw:accel_rw_inst1|state
+ 10. State Machine - |p3_accel_motor|pract_3_spi:inst1|init_accel:init_accel_inst1|state
  11. Registers Removed During Synthesis
  12. Removed Registers Triggering Further Register Optimizations
  13. General Register Statistics
  14. Inverted Register Statistics
  15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Parameter Settings for User Entity Instance: accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1
- 17. Port Connectivity Checks: "accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1"
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+ 16. Parameter Settings for User Entity Instance: pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1
+ 17. Port Connectivity Checks: "pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1"
+ 18. Port Connectivity Checks: "pract_3_spi:inst1"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -52,16 +53,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar  6 13:40:17 2019       ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar  6 14:24:33 2019       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; pract_3_spi                                 ;
-; Top-level Entity Name              ; pract_3_spi                                 ;
+; Top-level Entity Name              ; p3_accel_motor                              ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 251                                         ;
-;     Total combinational functions  ; 222                                         ;
-;     Dedicated logic registers      ; 147                                         ;
-; Total registers                    ; 147                                         ;
-; Total pins                         ; 19                                          ;
+; Total logic elements               ; 228                                         ;
+;     Total combinational functions  ; 207                                         ;
+;     Dedicated logic registers      ; 132                                         ;
+; Total registers                    ; 132                                         ;
+; Total pins                         ; 9                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -75,7 +76,7 @@ agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE22F17C6       ;                    ;
-; Top-level entity name                                                      ; pract_3_spi        ; pract_3_spi        ;
+; Top-level entity name                                                      ; p3_accel_motor     ; pract_3_spi        ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -181,6 +182,7 @@ agreement for further details.
 ; spi_3_wire_master.vhd            ; yes             ; User VHDL File  ; /home/robotica/ppos_meca_qx7/pract_3_spi/spi_3_wire_master.vhd ;         ;
 ; init_accel.vhd                   ; yes             ; User VHDL File  ; /home/robotica/ppos_meca_qx7/pract_3_spi/init_accel.vhd        ;         ;
 ; accel_rw.vhd                     ; yes             ; User VHDL File  ; /home/robotica/ppos_meca_qx7/pract_3_spi/accel_rw.vhd          ;         ;
+; p3_accel_motor.vhd               ; yes             ; User VHDL File  ; /home/robotica/ppos_meca_qx7/pract_3_spi/p3_accel_motor.vhd    ;         ;
 +----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
 
 
@@ -189,49 +191,50 @@ agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 251       ;
+; Estimated Total logic elements              ; 228       ;
 ;                                             ;           ;
-; Total combinational functions               ; 222       ;
+; Total combinational functions               ; 207       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 67        ;
-;     -- 3 input functions                    ; 41        ;
-;     -- <=2 input functions                  ; 114       ;
+;     -- 4 input functions                    ; 69        ;
+;     -- 3 input functions                    ; 34        ;
+;     -- <=2 input functions                  ; 104       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 171       ;
+;     -- normal mode                          ; 156       ;
 ;     -- arithmetic mode                      ; 51        ;
 ;                                             ;           ;
-; Total registers                             ; 147       ;
-;     -- Dedicated logic registers            ; 147       ;
+; Total registers                             ; 132       ;
+;     -- Dedicated logic registers            ; 132       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 19        ;
+; I/O pins                                    ; 9         ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 147       ;
-; Total fan-out                               ; 1147      ;
-; Average fan-out                             ; 2.81      ;
+; Maximum fan-out                             ; 132       ;
+; Total fan-out                               ; 1029      ;
+; Average fan-out                             ; 2.87      ;
 +---------------------------------------------+-----------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                              ;
-+---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+-------------------+--------------+
-; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Entity Name       ; Library Name ;
-+---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+-------------------+--------------+
-; |pract_3_spi                                      ; 222 (63)            ; 147 (42)                  ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |pract_3_spi                                                                   ; pract_3_spi       ; work         ;
-;    |accel_rw:accel_rw_inst1|                      ; 144 (16)            ; 80 (9)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pract_3_spi|accel_rw:accel_rw_inst1                                           ; accel_rw          ; work         ;
-;       |spi_3_wire_master:spi_3_wire_master_inst1| ; 128 (128)           ; 71 (71)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pract_3_spi|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1 ; spi_3_wire_master ; work         ;
-;    |init_accel:init_accel_inst1|                  ; 15 (15)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pract_3_spi|init_accel:init_accel_inst1                                       ; init_accel        ; work         ;
-+---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+-------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                      ;
++------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node                           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                 ; Entity Name       ; Library Name ;
++------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+-------------------+--------------+
+; |p3_accel_motor                                      ; 207 (0)             ; 132 (0)                   ; 0           ; 0            ; 0       ; 0         ; 9    ; 0            ; |p3_accel_motor                                                                                     ; p3_accel_motor    ; work         ;
+;    |pract_3_spi:inst1|                               ; 207 (48)            ; 132 (34)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p3_accel_motor|pract_3_spi:inst1                                                                   ; pract_3_spi       ; work         ;
+;       |accel_rw:accel_rw_inst1|                      ; 144 (16)            ; 73 (9)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p3_accel_motor|pract_3_spi:inst1|accel_rw:accel_rw_inst1                                           ; accel_rw          ; work         ;
+;          |spi_3_wire_master:spi_3_wire_master_inst1| ; 128 (128)           ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p3_accel_motor|pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1 ; spi_3_wire_master ; work         ;
+;       |init_accel:init_accel_inst1|                  ; 15 (15)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p3_accel_motor|pract_3_spi:inst1|init_accel:init_accel_inst1                                       ; init_accel        ; work         ;
++------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |pract_3_spi|state                                                                                           ;
+; State Machine - |p3_accel_motor|pract_3_spi:inst1|state                                                                      ;
 +----------------------+---------------+----------------------+---------------+----------------------+------------+------------+
 ; Name                 ; state.READING ; state.RD_PARAMS_SEND ; state.WRITING ; state.WR_PARAMS_SEND ; state.IDLE ; state.INIT ;
 +----------------------+---------------+----------------------+---------------+----------------------+------------+------------+
@@ -246,7 +249,7 @@ Encoding Type:  One-Hot
 
 Encoding Type:  One-Hot
 +-----------------------------------------------------------------------------------------+
-; State Machine - |pract_3_spi|accel_rw:accel_rw_inst1|state                              ;
+; State Machine - |p3_accel_motor|pract_3_spi:inst1|accel_rw:accel_rw_inst1|state         ;
 +-------------+----------+----------+-------------+-------------+------------+------------+
 ; Name        ; state.TX ; state.RX ; state.RD_ST ; state.WR_ST ; state.IDLE ; state.INIT ;
 +-------------+----------+----------+-------------+-------------+------------+------------+
@@ -261,7 +264,7 @@ Encoding Type:  One-Hot
 
 Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |pract_3_spi|init_accel:init_accel_inst1|state                                                                                                                                                                                                                                                                                                          ;
+; State Machine - |p3_accel_motor|pract_3_spi:inst1|init_accel:init_accel_inst1|state                                                                                                                                                                                                                                                                                     ;
 +------------------------+-----------------+-----------------+-------------------+--------------+---------------------+------------------------+------------------+---------------------+------------------+------------------+--------------------+------------------------+---------------------+-----------------------+---------------------+------------+------------+
 ; Name                   ; state.WR_WINDOW ; state.WR_LATENT ; state.WR_TAP_AXES ; state.WR_DUR ; state.WR_THRESH_TAP ; state.WR_POWER_CONTROL ; state.WR_INT_MAP ; state.WR_INT_ENABLE ; state.WR_BW_RATE ; state.WR_TIME_FF ; state.WR_THRESH_FF ; state.WR_ACT_INACT_CTL ; state.WR_TIME_INACT ; state.WR_THRESH_INACT ; state.WR_THRESH_ACT ; state.IDLE ; state.INIT ;
 +------------------------+-----------------+-----------------+-------------------+--------------+---------------------+------------------------+------------------+---------------------+------------------+------------------+--------------------+------------------------+---------------------+-----------------------+---------------------+------------+------------+
@@ -285,35 +288,38 @@ Encoding Type:  One-Hot
 +------------------------+-----------------+-----------------+-------------------+--------------+---------------------+------------------------+------------------+---------------------+------------------+------------------+--------------------+------------------------+---------------------+-----------------------+---------------------+------------+------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                 ;
-+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-; Register name                                                                        ; Reason for Removal                                                                          ;
-+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-; init_accel:init_accel_inst1|cmd_buffer[6]                                            ; Stuck at GND due to stuck port data_in                                                      ;
-; accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|clk_ratio[1,3..30] ; Stuck at GND due to stuck port data_in                                                      ;
-; accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|clk_ratio[0]       ; Stuck at VCC due to stuck port data_in                                                      ;
-; init_accel:init_accel_inst1|rx_buffer[0,2,4..7]                                      ; Stuck at GND due to stuck port data_in                                                      ;
-; accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|last_bit_rx[0..4]  ; Stuck at GND due to stuck port data_in                                                      ;
-; accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|slave[0]           ; Merged with accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|clk_ratio[31] ;
-; accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|last_bit_rx[5]     ; Merged with accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|clk_ratio[2]  ;
-; tx_data_buffer[2,4..7]                                                               ; Merged with tx_data_buffer[0]                                                               ;
-; tx_data_buffer[0]                                                                    ; Stuck at GND due to stuck port data_in                                                      ;
-; accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|clk_ratio[31]      ; Merged with accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|clk_ratio[2]  ;
-; init_accel:init_accel_inst1|state.INIT                                               ; Merged with accel_rw:accel_rw_inst1|state.INIT                                              ;
-; state.INIT                                                                           ; Merged with accel_rw:accel_rw_inst1|state.INIT                                              ;
-; Total Number of Removed Registers = 53                                               ;                                                                                             ;
-+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                     ;
++--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                          ; Reason for Removal                                                                                            ;
++--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+; pract_3_spi:inst1|init_accel:init_accel_inst1|cmd_buffer[6]                                            ; Stuck at GND due to stuck port data_in                                                                        ;
+; pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|clk_ratio[1,3..30] ; Stuck at GND due to stuck port data_in                                                                        ;
+; pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|clk_ratio[0]       ; Stuck at VCC due to stuck port data_in                                                                        ;
+; pract_3_spi:inst1|init_accel:init_accel_inst1|rx_buffer[0,2,4..7]                                      ; Stuck at GND due to stuck port data_in                                                                        ;
+; pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|last_bit_rx[0..4]  ; Stuck at GND due to stuck port data_in                                                                        ;
+; pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|slave[0]           ; Merged with pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|clk_ratio[31] ;
+; pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|last_bit_rx[5]     ; Merged with pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|clk_ratio[2]  ;
+; pract_3_spi:inst1|tx_data_buffer[2,4..7]                                                               ; Merged with pract_3_spi:inst1|tx_data_buffer[0]                                                               ;
+; pract_3_spi:inst1|cmd_buffer[6]                                                                        ; Stuck at GND due to stuck port data_in                                                                        ;
+; pract_3_spi:inst1|tx_data_buffer[0]                                                                    ; Stuck at GND due to stuck port data_in                                                                        ;
+; pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|clk_ratio[31]      ; Merged with pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|clk_ratio[2]  ;
+; pract_3_spi:inst1|init_accel:init_accel_inst1|state.INIT                                               ; Merged with pract_3_spi:inst1|accel_rw:accel_rw_inst1|state.INIT                                              ;
+; pract_3_spi:inst1|state.INIT                                                                           ; Merged with pract_3_spi:inst1|accel_rw:accel_rw_inst1|state.INIT                                              ;
+; Total Number of Removed Registers = 54                                                                 ;                                                                                                               ;
++--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                   ;
-+------------------------------------------+---------------------------+----------------------------------------+
-; Register name                            ; Reason for Removal        ; Registers Removed due to This Register ;
-+------------------------------------------+---------------------------+----------------------------------------+
-; init_accel:init_accel_inst1|rx_buffer[0] ; Stuck at GND              ; tx_data_buffer[0]                      ;
-;                                          ; due to stuck port data_in ;                                        ;
-+------------------------------------------+---------------------------+----------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                      ;
++-------------------------------------------------------------+---------------------------+----------------------------------------+
+; Register name                                               ; Reason for Removal        ; Registers Removed due to This Register ;
++-------------------------------------------------------------+---------------------------+----------------------------------------+
+; pract_3_spi:inst1|init_accel:init_accel_inst1|cmd_buffer[6] ; Stuck at GND              ; pract_3_spi:inst1|cmd_buffer[6]        ;
+;                                                             ; due to stuck port data_in ;                                        ;
+; pract_3_spi:inst1|init_accel:init_accel_inst1|rx_buffer[0]  ; Stuck at GND              ; pract_3_spi:inst1|tx_data_buffer[0]    ;
+;                                                             ; due to stuck port data_in ;                                        ;
++-------------------------------------------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -321,75 +327,89 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 147   ;
-; Number of registers using Synchronous Clear  ; 31    ;
+; Total registers                              ; 132   ;
+; Number of registers using Synchronous Clear  ; 23    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 47    ;
+; Number of registers using Asynchronous Clear ; 33    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 130   ;
+; Number of registers using Clock Enable       ; 113   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------+
-; Inverted Register Statistics                                                          ;
-+-----------------------------------------------------------------------------+---------+
-; Inverted Register                                                           ; Fan out ;
-+-----------------------------------------------------------------------------+---------+
-; accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|ss_n[0]   ; 3       ;
-; accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|count[31] ; 2       ;
-; accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|count[0]  ; 4       ;
-; accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|busy      ; 6       ;
-; write_accel_n                                                               ; 4       ;
-; read_accel_n                                                                ; 2       ;
-; Total number of inverted registers = 6                                      ;         ;
-+-----------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                            ;
++-----------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                             ; Fan out ;
++-----------------------------------------------------------------------------------------------+---------+
+; pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|ss_n[0]   ; 3       ;
+; pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|count[31] ; 2       ;
+; pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|count[0]  ; 4       ;
+; pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|busy      ; 6       ;
+; pract_3_spi:inst1|write_accel_n                                                               ; 4       ;
+; pract_3_spi:inst1|read_accel_n                                                                ; 2       ;
+; Total number of inverted registers = 6                                                        ;         ;
++-----------------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |pract_3_spi|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|assert_data   ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |pract_3_spi|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|cmd_buffer[6] ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |pract_3_spi|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|count[29]     ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |pract_3_spi|cmd_buffer[0]                                                                   ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |pract_3_spi|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|d_buffer[6]   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |pract_3_spi|tx_data_buffer[3]                                                               ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |pract_3_spi|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|count[31]     ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |pract_3_spi|Selector28                                                                      ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |pract_3_spi|accel_rw:accel_rw_inst1|Selector2                                               ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |pract_3_spi|Selector31                                                                      ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |pract_3_spi|accel_rw:accel_rw_inst1|Selector7                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |p3_accel_motor|pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|clk_toggles[5] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |p3_accel_motor|pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|cmd_buffer[1]  ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |p3_accel_motor|pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|count[8]       ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |p3_accel_motor|pract_3_spi:inst1|cmd_buffer[2]                                                                    ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |p3_accel_motor|pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|d_buffer[6]    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |p3_accel_motor|pract_3_spi:inst1|tx_data_buffer[1]                                                                ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |p3_accel_motor|pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1|count[31]      ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |p3_accel_motor|pract_3_spi:inst1|Selector28                                                                       ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |p3_accel_motor|pract_3_spi:inst1|accel_rw:accel_rw_inst1|Selector2                                                ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |p3_accel_motor|pract_3_spi:inst1|Selector31                                                                       ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |p3_accel_motor|pract_3_spi:inst1|accel_rw:accel_rw_inst1|Selector7                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1 ;
-+----------------+-------+---------------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                                  ;
-+----------------+-------+---------------------------------------------------------------------------------------+
-; slaves         ; 1     ; Signed Integer                                                                        ;
-; cmd_width      ; 8     ; Signed Integer                                                                        ;
-; d_width        ; 8     ; Signed Integer                                                                        ;
-+----------------+-------+---------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1 ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
+; slaves         ; 1     ; Signed Integer                                                                                          ;
+; cmd_width      ; 8     ; Signed Integer                                                                                          ;
+; d_width        ; 8     ; Signed Integer                                                                                          ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1" ;
-+----------------+-------+----------+-----------------------------------------------------------+
-; Port           ; Type  ; Severity ; Details                                                   ;
-+----------------+-------+----------+-----------------------------------------------------------+
-; cpol           ; Input ; Info     ; Stuck at VCC                                              ;
-; cpha           ; Input ; Info     ; Stuck at VCC                                              ;
-; clk_div[31..3] ; Input ; Info     ; Stuck at GND                                              ;
-; clk_div[2]     ; Input ; Info     ; Stuck at VCC                                              ;
-; clk_div[1]     ; Input ; Info     ; Stuck at GND                                              ;
-; clk_div[0]     ; Input ; Info     ; Stuck at VCC                                              ;
-; addr           ; Input ; Info     ; Stuck at GND                                              ;
-+----------------+-------+----------+-----------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1" ;
++----------------+-------+----------+-----------------------------------------------------------------------------+
+; Port           ; Type  ; Severity ; Details                                                                     ;
++----------------+-------+----------+-----------------------------------------------------------------------------+
+; cpol           ; Input ; Info     ; Stuck at VCC                                                                ;
+; cpha           ; Input ; Info     ; Stuck at VCC                                                                ;
+; clk_div[31..3] ; Input ; Info     ; Stuck at GND                                                                ;
+; clk_div[2]     ; Input ; Info     ; Stuck at VCC                                                                ;
+; clk_div[1]     ; Input ; Info     ; Stuck at GND                                                                ;
+; clk_div[0]     ; Input ; Info     ; Stuck at VCC                                                                ;
+; addr           ; Input ; Info     ; Stuck at GND                                                                ;
++----------------+-------+----------+-----------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pract_3_spi:inst1"                                                                        ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; leds[5..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; leds[7]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; dip_sw[3]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dip_sw[2]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; dip_sw[1]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dip_sw[0]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -397,27 +417,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 19                          ;
-; cycloneiii_ff         ; 147                         ;
-;     CLR               ; 14                          ;
-;     CLR SCLR          ; 1                           ;
-;     ENA               ; 75                          ;
-;     ENA CLR           ; 25                          ;
-;     ENA CLR SCLR      ; 7                           ;
+; boundary_port         ; 9                           ;
+; cycloneiii_ff         ; 132                         ;
+;     CLR               ; 17                          ;
+;     ENA               ; 74                          ;
+;     ENA CLR           ; 16                          ;
 ;     ENA SCLR          ; 23                          ;
 ;     plain             ; 2                           ;
 ; cycloneiii_io_obuf    ; 1                           ;
-; cycloneiii_lcell_comb ; 223                         ;
+; cycloneiii_lcell_comb ; 209                         ;
 ;     arith             ; 51                          ;
 ;         2 data inputs ; 51                          ;
-;     normal            ; 172                         ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 59                          ;
-;         3 data inputs ; 41                          ;
-;         4 data inputs ; 67                          ;
+;     normal            ; 158                         ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 49                          ;
+;         3 data inputs ; 34                          ;
+;         4 data inputs ; 69                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.10                        ;
-; Average LUT depth     ; 2.84                        ;
+; Average LUT depth     ; 2.96                        ;
 +-----------------------+-----------------------------+
 
 
@@ -436,7 +454,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Wed Mar  6 13:39:59 2019
+    Info: Processing started: Wed Mar  6 14:24:15 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pract_3_spi -c pract_3_spi
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -452,8 +470,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file init_ac
 Info (12021): Found 2 design units, including 1 entities, in source file accel_rw.vhd
     Info (12022): Found design unit 1: accel_rw-accel_rw_arch File: /home/robotica/ppos_meca_qx7/pract_3_spi/accel_rw.vhd Line: 24
     Info (12023): Found entity 1: accel_rw File: /home/robotica/ppos_meca_qx7/pract_3_spi/accel_rw.vhd Line: 6
-Info (12127): Elaborating entity "pract_3_spi" for the top level hierarchy
-Info (12128): Elaborating entity "init_accel" for hierarchy "init_accel:init_accel_inst1" File: /home/robotica/ppos_meca_qx7/pract_3_spi/pract_3_spi.vhd Line: 79
+Info (12021): Found 2 design units, including 1 entities, in source file p3_accel_motor.vhd
+    Info (12022): Found design unit 1: p3_accel_motor-arch File: /home/robotica/ppos_meca_qx7/pract_3_spi/p3_accel_motor.vhd Line: 20
+    Info (12023): Found entity 1: p3_accel_motor File: /home/robotica/ppos_meca_qx7/pract_3_spi/p3_accel_motor.vhd Line: 6
+Info (12127): Elaborating entity "p3_accel_motor" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at p3_accel_motor.vhd(39): used explicit default value for signal "dip_sim" because signal was never assigned a value File: /home/robotica/ppos_meca_qx7/pract_3_spi/p3_accel_motor.vhd Line: 39
+Info (12128): Elaborating entity "pract_3_spi" for hierarchy "pract_3_spi:inst1" File: /home/robotica/ppos_meca_qx7/pract_3_spi/p3_accel_motor.vhd Line: 44
+Info (12128): Elaborating entity "init_accel" for hierarchy "pract_3_spi:inst1|init_accel:init_accel_inst1" File: /home/robotica/ppos_meca_qx7/pract_3_spi/pract_3_spi.vhd Line: 79
 Warning (10540): VHDL Signal Declaration warning at init_accel.vhd(30): used explicit default value for signal "THRESH_TAP" because signal was never assigned a value File: /home/robotica/ppos_meca_qx7/pract_3_spi/init_accel.vhd Line: 30
 Warning (10540): VHDL Signal Declaration warning at init_accel.vhd(31): used explicit default value for signal "DUR" because signal was never assigned a value File: /home/robotica/ppos_meca_qx7/pract_3_spi/init_accel.vhd Line: 31
 Warning (10540): VHDL Signal Declaration warning at init_accel.vhd(32): used explicit default value for signal "LATENT" because signal was never assigned a value File: /home/robotica/ppos_meca_qx7/pract_3_spi/init_accel.vhd Line: 32
@@ -471,25 +494,25 @@ Warning (10540): VHDL Signal Declaration warning at init_accel.vhd(43): used exp
 Warning (10540): VHDL Signal Declaration warning at init_accel.vhd(44): used explicit default value for signal "INT_MAP" because signal was never assigned a value File: /home/robotica/ppos_meca_qx7/pract_3_spi/init_accel.vhd Line: 44
 Warning (10540): VHDL Signal Declaration warning at init_accel.vhd(47): used explicit default value for signal "done_init" because signal was never assigned a value File: /home/robotica/ppos_meca_qx7/pract_3_spi/init_accel.vhd Line: 47
 Warning (10492): VHDL Process Statement warning at init_accel.vhd(57): signal "reset_n" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/robotica/ppos_meca_qx7/pract_3_spi/init_accel.vhd Line: 57
-Info (12128): Elaborating entity "accel_rw" for hierarchy "accel_rw:accel_rw_inst1" File: /home/robotica/ppos_meca_qx7/pract_3_spi/pract_3_spi.vhd Line: 90
-Info (12128): Elaborating entity "spi_3_wire_master" for hierarchy "accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1" File: /home/robotica/ppos_meca_qx7/pract_3_spi/accel_rw.vhd Line: 81
+Info (12128): Elaborating entity "accel_rw" for hierarchy "pract_3_spi:inst1|accel_rw:accel_rw_inst1" File: /home/robotica/ppos_meca_qx7/pract_3_spi/pract_3_spi.vhd Line: 90
+Info (12128): Elaborating entity "spi_3_wire_master" for hierarchy "pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1" File: /home/robotica/ppos_meca_qx7/pract_3_spi/accel_rw.vhd Line: 81
 Info (13000): Registers with preset signals will power-up high File: /home/robotica/ppos_meca_qx7/pract_3_spi/spi_3_wire_master.vhd Line: 67
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "G_SENSOR_INT" File: /home/robotica/ppos_meca_qx7/pract_3_spi/pract_3_spi.vhd Line: 14
-    Warning (15610): No output dependent on input pin "btn_1" File: /home/robotica/ppos_meca_qx7/pract_3_spi/pract_3_spi.vhd Line: 15
-Info (21057): Implemented 271 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 10 output pins
+    Warning (15610): No output dependent on input pin "G_SENSOR_INT" File: /home/robotica/ppos_meca_qx7/pract_3_spi/p3_accel_motor.vhd Line: 14
+    Warning (15610): No output dependent on input pin "btn_1" File: /home/robotica/ppos_meca_qx7/pract_3_spi/p3_accel_motor.vhd Line: 15
+Info (21057): Implemented 238 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 4 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 252 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 969 megabytes
-    Info: Processing ended: Wed Mar  6 13:40:17 2019
+    Info (21061): Implemented 229 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 22 warnings
+    Info: Peak virtual memory: 968 megabytes
+    Info: Processing ended: Wed Mar  6 14:24:33 2019
     Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:42
+    Info: Total CPU time (on all processors): 00:00:41
 
 

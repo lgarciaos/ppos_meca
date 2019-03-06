@@ -1,5 +1,5 @@
 Flow report for pract_3_spi
-Wed Mar  6 13:40:33 2019
+Wed Mar  6 14:24:49 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Mar  6 13:40:33 2019       ;
+; Flow Status                        ; Successful - Wed Mar  6 14:24:49 2019       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; pract_3_spi                                 ;
-; Top-level Entity Name              ; pract_3_spi                                 ;
+; Top-level Entity Name              ; p3_accel_motor                              ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 242 / 22,320 ( 1 % )                        ;
-;     Total combinational functions  ; 224 / 22,320 ( 1 % )                        ;
-;     Dedicated logic registers      ; 147 / 22,320 ( < 1 % )                      ;
-; Total registers                    ; 147                                         ;
-; Total pins                         ; 19 / 154 ( 12 % )                           ;
+; Total logic elements               ; 222 / 22,320 ( < 1 % )                      ;
+;     Total combinational functions  ; 209 / 22,320 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 132 / 22,320 ( < 1 % )                      ;
+; Total registers                    ; 132                                         ;
+; Total pins                         ; 9 / 154 ( 6 % )                             ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
 ; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                             ;
@@ -65,30 +65,31 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/06/2019 13:40:00 ;
+; Start date & time ; 03/06/2019 14:24:15 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; pract_3_spi         ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                            ;
-+-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 75350851966501.155190119907295         ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --             ;
-+-------------------------------------+----------------------------------------+---------------+-------------+----------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                               ;
++-------------------------------------+----------------------------------------+---------------+----------------+----------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name    ; Section Id     ;
++-------------------------------------+----------------------------------------+---------------+----------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 75350851966501.155190385509351         ; --            ; --             ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --             ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --             ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --             ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --             ; --             ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --             ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; p3_accel_motor ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; p3_accel_motor ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; p3_accel_motor ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --             ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --             ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --             ; --             ;
+; TOP_LEVEL_ENTITY                    ; p3_accel_motor                         ; pract_3_spi   ; --             ; --             ;
++-------------------------------------+----------------------------------------+---------------+----------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -96,12 +97,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:18     ; 1.0                     ; 957 MB              ; 00:00:42                           ;
-; Fitter                    ; 00:00:08     ; 1.0                     ; 1171 MB             ; 00:00:09                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 813 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 831 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1050 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:30     ; --                      ; --                  ; 00:00:55                           ;
+; Analysis & Synthesis      ; 00:00:17     ; 1.0                     ; 956 MB              ; 00:00:41                           ;
+; Fitter                    ; 00:00:09     ; 1.0                     ; 1169 MB             ; 00:00:10                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 813 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 822 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1053 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:31     ; --                      ; --                  ; 00:00:55                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
