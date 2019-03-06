@@ -132,7 +132,7 @@ cmd_to_reg <= cmd_buffer;
 		  
 		  WHEN WR_BW_RATE =>          --0x0C, el output rate es 400hz
 				cmd_buffer <= BW_RATE;
-				rx_buffer <= x"0C";
+				rx_buffer <= x"0A";
 				busy_buffer <= '1';
 		  
 				if (next_wr = '1') then 
