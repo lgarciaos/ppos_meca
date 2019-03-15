@@ -1,15 +1,15 @@
-Fitter Status : Successful - Tue Mar  5 15:48:01 2019
+Fitter Status : Successful - Wed Mar  6 14:24:42 2019
 Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 Revision Name : pract_3_spi
-Top-level Entity Name : pract_3_spi
+Top-level Entity Name : p3_accel_motor
 Family : Cyclone IV E
 Device : EP4CE22F17C6
 Timing Models : Final
-Total logic elements : 228 / 22,320 ( 1 % )
-    Total combinational functions : 215 / 22,320 ( < 1 % )
-    Dedicated logic registers : 146 / 22,320 ( < 1 % )
-Total registers : 146
-Total pins : 19 / 154 ( 12 % )
+Total logic elements : 222 / 22,320 ( < 1 % )
+    Total combinational functions : 209 / 22,320 ( < 1 % )
+    Dedicated logic registers : 132 / 22,320 ( < 1 % )
+Total registers : 132
+Total pins : 9 / 154 ( 6 % )
 Total virtual pins : 0
 Total memory bits : 0 / 608,256 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )

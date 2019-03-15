@@ -1,4 +1,16 @@
-|pract_3_spi
+|p3_accel_motor
+CLK => pract_3_spi:inst1.CLK
+reset_n => pract_3_spi:inst1.reset_n
+I2C_SCLK << pract_3_spi:inst1.I2C_SCLK
+I2C_SDAT <> pract_3_spi:inst1.I2C_SDAT
+G_SENSOR_CS_N << pract_3_spi:inst1.G_SENSOR_CS_N
+G_SENSOR_INT => pract_3_spi:inst1.G_SENSOR_INT
+btn_1 => pract_3_spi:inst1.btn_1
+h[0] <= pract_3_spi:inst1.LEDS[6]
+h[1] <= pract_3_spi:inst1.LEDS[6]
+
+
+|p3_accel_motor|pract_3_spi:inst1
 CLK => init_accel:init_accel_inst1.CLK
 CLK => accel_rw:accel_rw_inst1.CLK
 CLK => delay[0].CLK
@@ -93,19 +105,19 @@ reset_n => delay[4].ENA
 reset_n => delay[3].ENA
 reset_n => delay[2].ENA
 reset_n => delay[1].ENA
-I2C_SCLK << accel_rw:accel_rw_inst1.I2C_SCLK
+I2C_SCLK <= accel_rw:accel_rw_inst1.I2C_SCLK
 I2C_SDAT <> accel_rw:accel_rw_inst1.I2C_SDAT
-G_SENSOR_CS_N << accel_rw:accel_rw_inst1.G_SENSOR_CS_N
+G_SENSOR_CS_N <= accel_rw:accel_rw_inst1.G_SENSOR_CS_N
 G_SENSOR_INT => accel_rw:accel_rw_inst1.G_SENSOR_INT
 btn_1 => ~NO_FANOUT~
-LEDS[0] << leds_buffer[0].DB_MAX_OUTPUT_PORT_TYPE
-LEDS[1] << leds_buffer[1].DB_MAX_OUTPUT_PORT_TYPE
-LEDS[2] << leds_buffer[2].DB_MAX_OUTPUT_PORT_TYPE
-LEDS[3] << leds_buffer[3].DB_MAX_OUTPUT_PORT_TYPE
-LEDS[4] << leds_buffer[4].DB_MAX_OUTPUT_PORT_TYPE
-LEDS[5] << leds_buffer[5].DB_MAX_OUTPUT_PORT_TYPE
-LEDS[6] << leds_buffer[6].DB_MAX_OUTPUT_PORT_TYPE
-LEDS[7] << leds_buffer[7].DB_MAX_OUTPUT_PORT_TYPE
+LEDS[0] <= leds_buffer[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDS[1] <= leds_buffer[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDS[2] <= leds_buffer[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDS[3] <= leds_buffer[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDS[4] <= leds_buffer[4].DB_MAX_OUTPUT_PORT_TYPE
+LEDS[5] <= leds_buffer[5].DB_MAX_OUTPUT_PORT_TYPE
+LEDS[6] <= leds_buffer[6].DB_MAX_OUTPUT_PORT_TYPE
+LEDS[7] <= leds_buffer[7].DB_MAX_OUTPUT_PORT_TYPE
 dip_sw[0] => Equal0.IN7
 dip_sw[0] => Equal1.IN7
 dip_sw[0] => Equal2.IN7
@@ -172,7 +184,7 @@ dip_sw[3] => Equal14.IN4
 dip_sw[3] => Equal15.IN4
 
 
-|pract_3_spi|init_accel:init_accel_inst1
+|p3_accel_motor|pract_3_spi:inst1|init_accel:init_accel_inst1
 CLK => rx_buffer[0].CLK
 CLK => rx_buffer[1].CLK
 CLK => rx_buffer[2].CLK
@@ -262,7 +274,7 @@ val_to_reg[6] <= rx_buffer[6].DB_MAX_OUTPUT_PORT_TYPE
 val_to_reg[7] <= rx_buffer[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|pract_3_spi|accel_rw:accel_rw_inst1
+|p3_accel_motor|pract_3_spi:inst1|accel_rw:accel_rw_inst1
 CLK => spi_3_wire_master:spi_3_wire_master_inst1.clock
 CLK => busy_out~reg0.CLK
 CLK => enable.CLK
@@ -316,7 +328,7 @@ RX_out[7] <= spi_3_wire_master:spi_3_wire_master_inst1.rx_data[7]
 busy_out <= busy_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|pract_3_spi|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1
+|p3_accel_motor|pract_3_spi:inst1|accel_rw:accel_rw_inst1|spi_3_wire_master:spi_3_wire_master_inst1
 clock => last_bit_rx[0].CLK
 clock => last_bit_rx[1].CLK
 clock => last_bit_rx[2].CLK

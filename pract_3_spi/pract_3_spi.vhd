@@ -106,12 +106,12 @@ begin
 	
 	reg_to_check <= 
 		x"00" when dip_sw = "0000" else
-		x"00" when dip_sw = "0001" else
-		x"00" when dip_sw = "0010" else
-		x"00" when dip_sw = "0011" else
-		x"00" when dip_sw = "0100" else
-		x"00" when dip_sw = "0101" else
-		x"00" when dip_sw = "0110" else
+		x"32" when dip_sw = "0001" else
+		x"34" when dip_sw = "0010" else
+		x"36" when dip_sw = "0011" else
+		x"33" when dip_sw = "0100" else
+		x"35" when dip_sw = "0101" else
+		x"37" when dip_sw = "0110" else
 		x"00" when dip_sw = "0111" else
 		x"00" when dip_sw = "1000" else
 		x"00" when dip_sw = "1001" else
